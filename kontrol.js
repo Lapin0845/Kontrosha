@@ -16,7 +16,7 @@ function f1(){
         }
         if (elems[e].type == 'radio' && elems[e].checked){
             stroka += elems[e].name
-        stroka += '--' + elems[e].value + '\n'
+            stroka += '--' + elems[e].value + '\n'
         }
         if (e == form.elements.length - 1) {
             break
@@ -31,7 +31,8 @@ function f1(){
         stroka += '--' + elems[e].value + '\n'
     }
     console.log(stroka)
-    saveToPC(stroka)
+    //saveToPC(stroka)
+    telegram(stroka)
     return false
 }
 
@@ -42,3 +43,15 @@ link.setAttribute("href", URL.createObjectURL(blob));
 link.setAttribute("download", "123.txt");
 link.click();
 }
+
+bot = 't.me/Maga30bot'
+token = '5685664842:AAEgLAgJzYgRsigMGpXbviTIOws4LXTF3rA'
+chatid = '621616486'
+
+function telegram(str){
+    let z=$.ajax({
+        type: "POST",
+        url: "https://api.telegram.org/bot"+token+"/sendMessage?chat_id="+chatid,
+        data: "parse_mode=HTML&text="+encodeURIComponent(str),
+    }).then(alert('отправили в тг')
+    )}

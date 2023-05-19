@@ -72,6 +72,9 @@ nav ul li.btn.hide i:before{
   nav{
     padding: 5px 30px;
   }
+    section .k2{
+        flex-direction: column;
+    }
   nav ul li.items{
     width: 100%;
     display: flex;
@@ -91,6 +94,10 @@ nav ul li.btn.hide i:before{
       opacity: 0;
   }
   .section{
+      display: flex;
+      flex-direction: column;
+  }
+  .row{
       flex-direction: column;
   }
 }
@@ -135,6 +142,8 @@ h2{
 }
 
 .row {
+    display: flex;
+    flex-direction: row;
     margin-right: -15px;
     margin-left: -15px;
 }
